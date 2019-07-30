@@ -18,6 +18,7 @@ class AddColorFrom extends Component {
       <form onSubmit={this.submit}>
         <input ref="_title" type="text" placeholder="color title..." required/>
         <input ref="_color" type="color" required/>
+        
         <button>ADD</button>
       </form>
     )
