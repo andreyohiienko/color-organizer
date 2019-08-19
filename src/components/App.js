@@ -3,7 +3,7 @@ import React from 'react';
 import '../App.css';
 
 const logColor = (title, color) =>
-  console.log(`New Color: ${title} | ${value}`);
+  console.log(`New Color: ${title} | ${color}`);
 
 function App() {
   return (
