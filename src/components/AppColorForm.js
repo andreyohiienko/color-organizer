@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class AddColorFrom extends Component {
   constructor(props) {
@@ -8,8 +8,7 @@ class AddColorFrom extends Component {
   }
   submit(e) {
     const { _title, _color } = this.refs;
-    e.preventDefault();
-    alert(`New color: ${_title.value} ${_color.value}`);
+    this.props.onNewColor(_title.value, _color.value);
     _title.value = '';
     _color.value = '#000000';
   }

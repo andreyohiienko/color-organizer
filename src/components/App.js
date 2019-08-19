@@ -2,10 +2,13 @@ import AppColorForm from './AppColorForm';
 import React from 'react';
 import '../App.css';
 
+const logColor = (title, color) =>
+  console.log(`New Color: ${title} | ${value}`);
+
 function App() {
   return (
     <div className="App">
-      <AppColorForm />
+      <AppColorForm  onNewColor={logColor}/>
     </div>
   );
 }
