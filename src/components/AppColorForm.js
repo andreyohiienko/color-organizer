@@ -1,39 +1,38 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-class AddColorFrom extends Component {
-  constructor(props) {
-    super(props)
-    this.submit = this.submit.bind(this)
-  }
-  submit(e) {
-    const { _title, _color } = this.refs
-    this.props.onNewColor(_title.value, _color.value)
+const AddColorFrom = ({ onNewColor = f => f }) => {
+  let _title, _color
+
+  const submit = e => {
     e.preventDefault()
-    // here we display data
-    alert(`New color: ${_title.value} ${_color.value}`)
-    // then we return inputs in their initial state
+    onNewColor(_title.value, _color.value)
     _title.value = ''
     _color.value = '#000000'
+    _title.focus()
   }
 
-  render() {
-    return (
-      <form onSubmit={this.submit}>
-        <input ref="_title" type="text" placeholder="color title..." required />
-        <input ref="_color" type="color" required />
-        <button>ADD</button>
-      </form>
-    )
-  }
+  return (
+    <form onSubmit={submit}>
+      <input
+        ref={input => (_title = input)}
+        type="text"
+        placeholder="color title..."
+        required
+      />
+      <input ref={input => (_color = input)} type="color" required />
+      <button>ADD</button>
+    </form>
+  )
 }
 
 AddColorFrom.propTypes = {
   onNewColor: PropTypes.func,
 }
 
-AddColorFrom.defaultProps = {
-  onNewColor: f => f,
-}
+// Default props already in arguments so this part is unnecessary
+// AddColorFrom.defaultProps = {
+//   onNewColor: f => f,
+// }
 
 export default AddColorFrom
