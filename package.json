@@ -16,7 +16,16 @@
     "eject": "react-scripts eject"
   },
   "browserify": {
-    "transform": [["babelify", { "presets": ["es2015"] }]]
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
