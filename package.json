@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "node-sass": "^4.13.0",
     "prettier": "^1.18.2",
+    "prop-types": "latest",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "prop-types": "latest"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -45,6 +46,7 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-prettier": "^3.1.1"
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0"
   }
 }

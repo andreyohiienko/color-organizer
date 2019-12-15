@@ -1,6 +1,6 @@
 import AppColorForm from './AppColorForm'
 import React from 'react'
-import '../App.css'
+import '../stylesheets/App.scss'
 
 function App() {
   const logColor = (title, color) =>
