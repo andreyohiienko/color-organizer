@@ -5,4 +5,4 @@ const constants = {
   REMOVE_COLOR: 'REMOVE_COLOR',
 }
 
-export default contants
+export default constants

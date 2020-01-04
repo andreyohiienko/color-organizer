@@ -1,8 +1,8 @@
-import C from './constants'
+import C from '../constants'
 
 export const color = (state = {}, action) => {
   switch (action.type) {
-    case c.ADD_COLOR:
+    case C.ADD_COLOR:
       return {
         id: action.id,
         title: action.title,
