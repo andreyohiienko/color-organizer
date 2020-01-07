@@ -4,28 +4,28 @@ import PropTypes from 'prop-types'
 import '../stylesheets/Color.scss'
 
 class Color extends Component {
-  componentWillMount() {
-    this.style = { backgroundColor: '#ccc' }
-  }
+  // componentWillMount() {
+  //   this.style = { backgroundColor: '#ccc' }
+  // }
 
-  componentWillUpdate(nextProps) {
-    const { title, rating } = this.props
-    this.style = null
-    this.refs.title.style.backgroundColor = 'red'
-    this.refs.title.style.color = 'white'
-    alert(`${title}: rating ${rating} -> ${nextProps.rating}`)
-  }
+  // componentWillUpdate(nextProps) {
+  //   const { title, rating } = this.props
+  //   this.style = null
+  //   this.refs.title.style.backgroundColor = 'red'
+  //   this.refs.title.style.color = 'white'
+  //   alert(`${title}: rating ${rating} -> ${nextProps.rating}`)
+  // }
 
-  shouldComponentUpdate(nextProps) {
-    return this.props.rating !== nextProps.rating
-  }
+  // shouldComponentUpdate(nextProps) {
+  //   return this.props.rating !== nextProps.rating
+  // }
 
-  componentDidUpdate(prevProps) {
-    const { title, rating } = this.props
-    const status = rating > prevProps.rating ? 'better' : 'worse'
-    this.refs.title.style.backgroundColor = ''
-    this.refs.title.style.color = 'black'
-  }
+  // componentDidUpdate(prevProps) {
+  //   const { title, rating } = this.props
+  //   const status = rating > prevProps.rating ? 'better' : 'worse'
+  //   this.refs.title.style.backgroundColor = ''
+  //   this.refs.title.style.color = 'black'
+  // }
 
   render() {
     const { title, rating, color, onRemove, onRate } = this.props

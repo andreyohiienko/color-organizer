@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import '../stylesheets/AddColorForm.scss'
-//test 
+import { addColor } from '../actions'
 
-const AddColorFrom = ({ onNewColor = f => f }) => {
+const AddColorFrom = ({ store }) => {
   let _title, _color
 
   const submit = e => {
     e.preventDefault()
-    onNewColor(_title.value, _color.value)
-    _title.value = 'test'
+    store.dispatch(addColor(_title.value, _color.value))
+    _title.value = ''
     _color.value = '#000'
     _title.focus()
   }
@@ -27,14 +27,5 @@ const AddColorFrom = ({ onNewColor = f => f }) => {
     </form>
   )
 }
-
-AddColorFrom.propTypes = {
-  onNewColor: PropTypes.func,
-}
-
-// Default props already in arguments so this part is unnecessary
-// AddColorFrom.defaultProps = {
-//   onNewColor: f => f,
-// }
 
 export default AddColorFrom
