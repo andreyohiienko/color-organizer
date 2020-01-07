@@ -1,7 +1,7 @@
 import React from 'react'
-import '../stylesheets/Menu.scss'
+import '../../stylesheets/Menu.scss'
 import PropTypes from 'prop-types'
-import { sortColors } from '../actions'
+import { sortColors } from '../../actions'
 
 const options = {
   date: 'SORTED_BY_DATE',
@@ -17,7 +17,7 @@ const SortMenu = (props, { store }) => {
         return (
           <a
             key={i}
-            href="#"
+            href="/"
             className={
               store.getState().sort === options[item] ? 'selected' : null
             }
