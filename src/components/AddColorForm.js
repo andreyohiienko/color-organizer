@@ -1,9 +1,9 @@
+import '../stylesheets/AddColorForm.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../stylesheets/AddColorForm.scss'
 import { addColor } from '../actions'
 
-const AddColorFrom = ({ store }) => {
+const AddColorForm = (props, { store }) => {
   let _title, _color
 
   const submit = e => {
@@ -28,4 +28,8 @@ const AddColorFrom = ({ store }) => {
   )
 }
 
-export default AddColorFrom
+AddColorForm.contextTypes = {
+  store: PropTypes.object,
+}
+
+export default AddColorForm

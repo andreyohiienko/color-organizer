@@ -1,45 +1,36 @@
 import React, { Component } from 'react'
-import StarRating from './StarRating'
 import PropTypes from 'prop-types'
+import StarRating from './StarRating'
+import TimeAgo from './TimeAgo'
+import { FaTrash } from 'react-icons/fa'
+import { rateColor, removeColor } from '../actions'
 import '../stylesheets/Color.scss'
 
 class Color extends Component {
-  // componentWillMount() {
-  //   this.style = { backgroundColor: '#ccc' }
-  // }
-
-  // componentWillUpdate(nextProps) {
-  //   const { title, rating } = this.props
-  //   this.style = null
-  //   this.refs.title.style.backgroundColor = 'red'
-  //   this.refs.title.style.color = 'white'
-  //   alert(`${title}: rating ${rating} -> ${nextProps.rating}`)
-  // }
-
-  // shouldComponentUpdate(nextProps) {
-  //   return this.props.rating !== nextProps.rating
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   const { title, rating } = this.props
-  //   const status = rating > prevProps.rating ? 'better' : 'worse'
-  //   this.refs.title.style.backgroundColor = ''
-  //   this.refs.title.style.color = 'black'
-  // }
-
   render() {
-    const { title, rating, color, onRemove, onRate } = this.props
+    const { id, title, color, rating, timestamp } = this.props
+    const { store } = this.context
     return (
       <section className="color" style={this.style}>
         <h1 ref="title">{title}</h1>
-        <button onClick={onRemove}>X</button>
+        <button onClick={() => store.dispatch(removeColor(id))}>
+          <FaTrash />
+        </button>
         <div className="color" style={{ backgroundColor: color }}></div>
+        <TimeAgo timestamp={timestamp}></TimeAgo>
         <div>
-          <StarRating starsSelected={rating} onRate={onRate} />
+          <StarRating
+            starsSelected={rating}
+            onRate={rating => store.dispatch(rateColor(id, rating))}
+          />
         </div>
       </section>
     )
   }
+}
+
+Color.contextTypes = {
+  store: PropTypes.object,
 }
 
 Color.propTypes = {
@@ -50,10 +41,6 @@ Color.propTypes = {
 }
 
 Color.defaultProps = {
-  title: undefined,
   rating: 0,
-  color: '#000',
-  onRate: f => f,
-  onRemove: f => f,
 }
 export default Color

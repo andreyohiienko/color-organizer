@@ -9,7 +9,7 @@ const options = {
   rating: 'SORTED_BY_RATING',
 }
 
-const SortMenu = ({ store }) => {
+const SortMenu = (props, { store }) => {
   return (
     <nav className="menu">
       <h1>Sort Colors</h1>
@@ -34,7 +34,7 @@ const SortMenu = ({ store }) => {
   )
 }
 
-SortMenu.propTypes = {
+SortMenu.contextTypes = {
   store: PropTypes.object,
 }
 

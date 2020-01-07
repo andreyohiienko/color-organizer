@@ -1,28 +1,20 @@
-import React from 'react'
-import Color from './Color'
-import { rateColor, removeColor } from '../actions'
-import { sortFunction } from '../lib/array-helpers'
 import '../stylesheets/ColorList.scss'
+import React from 'react'
+import PropTypes from 'prop-types'
+import Color from './Color'
 
-const ColorList = ({ store }) => {
-  const { colors, sort } = store.getState()
-  console.log(sort)
-  const sortedColors = [...colors].sort(sortFunction(sort))
-  return (
-    <div className="color-list">
-      {colors.length === 0 ? (
-        <p>No Colors listed.</p>
-      ) : (
-        sortedColors.map(color => (
-          <Color
-            key={color.id}
-            {...color}
-            onRate={rating => store.dispatch(rateColor(color.id, rating))}
-            onRemove={() => store.dispatch(removeColor(color.id))}
-          />
-        ))
-      )}
-    </div>
-  )
+const ColorList = ({ colors = [] }) => (
+  <div className="color-list">
+    {colors.length === 0 ? (
+      <p>No Colors listed. (Add a Color)</p>
+    ) : (
+      colors.map(color => <Color key={color.id} {...color} />)
+    )}
+  </div>
+)
+
+ColorList.propTypes = {
+  colors: PropTypes.array,
 }
+
 export default ColorList
