@@ -1,41 +1,22 @@
 import '../stylesheets/App.scss'
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import { NewColor, Menu, Colors } from './containers'
+import PropTypes from 'prop-types'
 
-class App extends Component {
-  getChildContext() {
-    return {
-      store: this.props.store,
-    }
-  }
+const App = (props, { store }) => (
+  <div className="app">
+    <Menu />
+    <NewColor />
+    <Colors />
+  </div>
+)
 
-  componentWillMount() {
-    const { store } = this.props
-    this.unsubscribe = store.subscribe(() => this.forceUpdate())
-  }
-
-  componentWillUnount() {
-    this.unsubscribe()
-  }
-
-  render() {
-    return (
-      <div className="app">
-        <Menu />
-        <NewColor />
-        <Colors />
-      </div>
-    )
-  }
-}
-
-App.childContextTypes = {
-  store: PropTypes.object.isRequired,
+App.contextTypes = {
+  store: PropTypes.object,
 }
 
 App.propTypes = {
-  store: PropTypes.object.isRequired,
+  store: PropTypes.object,
 }
 
 export default App
