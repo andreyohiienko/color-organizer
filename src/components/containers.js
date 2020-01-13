@@ -5,24 +5,11 @@ import ColorList from './ui/ColorList'
 import { addColor, sortColors, rateColor, removeColor } from '../actions'
 import { sortFunction } from '../lib/array-helpers'
 
-// export const NewColor = (props, { store }) => (
-//   <AddColorForm
-//     onNewColor={(title, color) => store.dispatch(addColor(title, color))}
-//   />
-// )
-
 export const NewColor = connect(null, dispatch => ({
   onNewColor(title, color) {
     dispatch(addColor(title, color))
   },
 }))(AddColorForm)
-
-// export const Menu = (props, { store }) => (
-//   <SortMenu
-//     sort={store.getState().sort}
-//     onSelect={sortBy => store.dispatch(sortColors(sortBy))}
-//   />
-// )
 
 export const Menu = connect(
   state => ({ sort: state.sort }),
@@ -32,22 +19,6 @@ export const Menu = connect(
     },
   }),
 )(SortMenu)
-
-// Menu.contextTypes = {
-//   store: PropTypes.object,
-// }
-
-// export const Colors = (props, { store }) => {
-//   const { colors, sort } = store.getState()
-//   const sortedColors = [...colors].sort(sortFunction(sort))
-//   return (
-//     <ColorList
-//       colors={sortedColors}
-//       onRemove={id => store.dispatch(removeColor(id))}
-//       onRate={(id, rating) => store.dispatch(rateColor(id, rating))}
-//     />
-//   )
-// }
 
 export const Colors = connect(
   state => ({
@@ -62,7 +33,3 @@ export const Colors = connect(
     },
   }),
 )(ColorList)
-
-// Colors.contextTypes = {
-//   store: PropTypes.object,
-// }
