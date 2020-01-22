@@ -1,24 +1,24 @@
-{
-  "root": true,
-  "env": {
-    "node": true,
-    "es6": true,
-    "browser": true
-  },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "sourceType": "module",
-    "allowImportExportEverywhere": true
-  },
-  "rules": {
-    "singleQuote": true,
-    "semi": [2, "never"],
-    "comma-dangle": ["error", {
-      "arrays": "always-multiline",
-      "objects": "always-multiline",
-      "imports": "always-multiline",
-      "exports": "always-multiline",
-      "functions": "always-multiline"
-    }]
-  }
-}
+// {
+//   "root": true,
+//   "env": {
+//     "node": true,
+//     "es6": true,
+//     "browser": true
+//   },
+//   "parser": "babel-eslint",
+//   "parserOptions": {
+//     "sourceType": "module",
+//     "allowImportExportEverywhere": true
+//   },
+//   "rules": {
+//     "singleQuote": true,
+//     "semi": [2, "never"],
+//     "comma-dangle": ["error", {
+//       "arrays": "always-multiline",
+//       "objects": "always-multiline",
+//       "imports": "always-multiline",
+//       "exports": "always-multiline",
+//       "functions": "always-multiline"
+//     }]
+//   }
+// }

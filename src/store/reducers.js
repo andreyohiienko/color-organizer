@@ -1,6 +1,10 @@
 import C from '../constants'
 
-export const color = (state = {}, action) => {
+// export const color = (state = {}, action = {}) => {
+//   return state
+// }
+
+export const color = (state = {}, action = {}) => {
   switch (action.type) {
     case C.ADD_COLOR:
       return {
@@ -11,9 +15,7 @@ export const color = (state = {}, action) => {
         rating: 0,
       }
     case C.RATE_COLOR:
-      return state.id !== action.id
-        ? state
-        : { ...state, rating: action.rating }
+      return { ...state, rating: action.rating }
     default:
       return state
   }
