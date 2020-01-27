@@ -1,7 +1,5 @@
-import { EnzymeAdapter } from 'enzyme'
+import { mount } from 'enzyme'
 import Expandable from '../../../src/components/HOC/Expandable'
-
-const { mount } = EnzymeAdapter
 
 describe('Expandable Higher Order Component', () => {
   let props,
@@ -15,7 +13,7 @@ describe('Expandable Higher Order Component', () => {
     beforeAll(() => {
       ComposedComponent = Expandable(MockComponent)
       wrapper = mount(
-        <ComposedComponent foo="foo" gnar="grar"></ComposedComponent>,
+        <ComposedComponent foo="foo" gnar="gnar"></ComposedComponent>,
       )
       props = wrapper.find(MockComponent).props()
     })
