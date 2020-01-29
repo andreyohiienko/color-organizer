@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Color /> UI Component Renders correct properties 1`] = `"<div class=\\"color-list\\"><p>No Colors listed. (Add a Color)</p></div>"`;
