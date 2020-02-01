@@ -22,4 +22,7 @@ export const rateColor = (id, rating) => ({
   rating,
 })
 
-export const sortColors = sortBy => ({ type: 'SORT_COLORS', sortBy })
+export const sortColors = (sortBy = 'SORTED_BY_DATE') => ({
+  type: 'SORT_COLORS',
+  sortBy,
+})

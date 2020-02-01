@@ -1,3 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Color /> UI Component Renders correct properties 1`] = `"<div class=\\"color-list\\"><p>No Colors listed. (Add a Color)</p></div>"`;
+exports[`<Color /> UI Component Renders correct properties 1`] = `
+<section
+  className="color"
+>
+  <h1>
+    Test Color
+  </h1>
+  <button
+    onClick={[Function]}
+  >
+    <FaTrash />
+  </button>
+  <div
+    className="color"
+    style={
+      Object {
+        "backgroundColor": "#f0f0f0",
+      }
+    }
+  />
+  <TimeAgo
+    timestamp="Mon Apr 11 2016 12:54:19 GMT-0700 (PDT)"
+  />
+  <div>
+    <StarRating
+      onRate={[Function]}
+      starsSelected={3}
+    />
+  </div>
+</section>
+`;

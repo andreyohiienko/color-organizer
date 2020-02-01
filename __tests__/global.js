@@ -7,6 +7,12 @@ import Adapter from 'enzyme-adapter-react-16'
 configure({ adapter: new Adapter() })
 
 global.React = React
+
+window.localStorage = {}
+// console.groupCollapsed = jest.fn()
+// console.log = jest.fn()
+// console.groupEnd = jest.fn()
+
 global._testColors = deepFreeze([
   {
     id: '8658c1d0-9eda-4a90-95e1-8001e8eb6036',
