@@ -36,7 +36,7 @@ export const colors = (state = [], action) => {
   }
 }
 
-export const sort = (state = 'SORT_BY_DATE', action = { type: null }) => {
+export const sort = (state = 'SORTED_BY_DATE', action = { type: null }) => {
   switch (action.type) {
     case C.SORT_COLORS:
       return action.sortBy
