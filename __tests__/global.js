@@ -9,9 +9,9 @@ configure({ adapter: new Adapter() })
 global.React = React
 
 window.localStorage = {}
-// console.groupCollapsed = jest.fn()
-// console.log = jest.fn()
-// console.groupEnd = jest.fn()
+console.groupCollapsed = jest.fn()
+console.log = jest.fn()
+console.groupEnd = jest.fn()
 
 global._testColors = deepFreeze([
   {
