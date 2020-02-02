@@ -15,7 +15,9 @@ export const color = (state = {}, action = {}) => {
         rating: 0,
       }
     case C.RATE_COLOR:
-      return { ...state, rating: action.rating }
+      return state.id !== action.id
+        ? state
+        : { ...state, rating: action.rating }
     default:
       return state
   }
