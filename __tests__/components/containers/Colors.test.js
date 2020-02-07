@@ -1,4 +1,4 @@
-import { mount, shllow } from 'enzyme'
+import { mount } from 'enzyme'
 import { Provider } from 'react-redux'
 import { Colors } from '../../../src/components/containers'
 
