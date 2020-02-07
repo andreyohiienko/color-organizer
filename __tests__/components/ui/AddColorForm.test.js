@@ -19,23 +19,23 @@ describe('<AddColorFrom /> UI Component', () => {
     })
   })
 
-  //   describe('Adding New Colors', () => {
-  //     const _addColor = jest.fn()
+  describe('Adding New Colors', () => {
+    const _addColor = jest.fn()
 
-  //     beforeAll(() => {
-  //       wrapper = mount(<AddColorForm onNewColor={_addColor} />)
-  //       wrapper.ref('_title').value = 'test-color'
-  //       wrapper.ref('_color').value = '#000099'
-  //       wrapper.find('_form').simulate('submit')
-  //     })
+    beforeAll(() => {
+      wrapper = mount(<AddColorForm onNewColor={_addColor} />)
+      wrapper.ref('_title').value = 'test-color'
+      wrapper.ref('_color').value = '#000099'
+      wrapper.find('form').simulate('submit')
+    })
 
-  //     it('adds colors title value', () =>
-  //       expect(_addColor).toBeCalledWith('test-color', '#000099'))
+    it('adds colors title value', () =>
+      expect(_addColor).toBeCalledWith('test-color', '#000099'))
 
-  //     it('resets the title value', () =>
-  //       expect(wrapper.ref('_title').value).toBe(''))
+    it('resets the title value', () =>
+      expect(wrapper.ref('_title').value).toBe(''))
 
-  //     it('resets the color value', () =>
-  //       expect(wrapper.ref('_color').value).toBe('#000000'))
-  //   })
+    it('resets the color value', () =>
+      expect(wrapper.ref('_color').value).toBe('#000000'))
+  })
 })
