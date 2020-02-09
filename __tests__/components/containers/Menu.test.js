@@ -1,5 +1,4 @@
 import { Provider } from 'react-redux'
-import { compose } from 'redux'
 import { Menu } from '../../../src/components/containers'
 import { mount } from 'enzyme'
 

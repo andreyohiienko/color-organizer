@@ -10,6 +10,12 @@ describe('<Star /> UI Component', () => {
       shallow(<Star selected={true} />).find('div.selected.star').length,
     ).toBe(1))
 
+  it('click does not cause error', () => {
+    shallow(<Star selected={true} />)
+      .find('div')
+      .simulate('click')
+  })
+
   it('invokes onClick', () => {
     const _click = jest.fn()
 

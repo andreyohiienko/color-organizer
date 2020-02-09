@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux'
 import { NewColor } from '../../../src/components/containers'
 import { addColor } from '../../../src/actions'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 
 jest.mock('../../../src/components/ui/AddColorForm')
 jest.mock('../../../src/actions')
